@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#62CBFF"/>
+      <stop offset="1" stop-color="#A260FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Transparent background for glass-friendly thumb -->
+  <rect width="640" height="360" fill="none"/>
+  <!-- Removed inner gradient panel for full transparency -->
+  <g fill="#9fd8ff" opacity="0.9" transform="translate(0,-20)">
+    <rect x="60" y="200" width="72" height="120" rx="8"/>
+    <rect x="150" y="150" width="72" height="170" rx="8"/>
+    <rect x="240" y="170" width="72" height="150" rx="8"/>
+    <rect x="330" y="120" width="72" height="200" rx="8"/>
+    <rect x="420" y="80" width="72" height="240" rx="8"/>
+    <rect x="510" y="110" width="72" height="210" rx="8"/>
+  </g>
+  <!-- text removed -->
+</svg>
+

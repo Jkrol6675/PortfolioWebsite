@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IMDb Movies Dashboard (Tableau) • Jake Krol</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="/js/app.js"></script>
+  </head>
+  <body x-data="portfolioApp()" x-init="init()">
+    <div class="site-bg" aria-hidden="true"></div>
+    <header class="site-header glass">
+      <div class="container header-inner">
+        <a href="/#home" class="brand">
+          <span class="brand-avatar" aria-hidden="true"><img src="/media/images/profile-small.jpg" alt="Profile" /></span>
+          <span class="brand-text">
+            <strong>Jake Krol</strong>
+            <small>Data Analyst • Data Engineer</small>
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a href="/#home">Home</a>
+          <a href="/#projects">Projects</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <label class="switch" :aria-label="$store.theme?.isDark ? 'Switch to light theme' : 'Switch to dark theme'">
+            <input type="checkbox" :checked="$store.theme?.isDark" @change="$store.theme?.toggle && $store.theme.toggle()" />
+            <span class="track"><span class="knob" aria-hidden="true"></span></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="project-imdb" class="section-gap" x-data="{ view: 'dashboard' }">
+        <div class="section-head">
+          <h2>IMDb Most Popular Movies: Vote‑weighted Ratings</h2>
+          <p class="muted">Interactive Tableau Public dashboard and the associated data notebook used to explore popularity and vote‑weighted ratings of movies through time. Voting regions are indicated by the featured heatmap.</p>
+        </div>
+
+        <div class="glass overlay-content" :class="{ 'is-notebook': view==='notebook' }" style="width:100%; overflow:hidden;">
+            <div class="overlay-bar" style="border-bottom:1px solid var(--glass-stroke); display:flex; align-items:center; justify-content:space-between;">
+              <div class="view-toggle nav-like" style="display:flex; gap:8px; align-items:center; padding-left:10px;">
+                <strong>Project View:</strong>
+                <a href="#" :class="{ active: view==='dashboard' }" @click.prevent="view='dashboard'">Dashboard</a>
+                <a href="#" :class="{ active: view==='notebook' }" @click.prevent="view='notebook'">Notebook</a>
+              </div>
+              <div class="overlay-actions">
+                <a class="btn ghost" :href="view==='dashboard' ? 'https://public.tableau.com/app/profile/jacob.krol/viz/IMDbsMostPopularMoviesbyVote-weightedRatings/Dashboard1' : 'https://github.com/Jkrol6675/IMDbExploratoryAnalysis-Movies/tree/main'" target="_blank" rel="noreferrer noopener" x-text="view==='dashboard' ? 'Open in Tableau Public' : 'Source'"></a>
+              </div>
+            </div>
+
+          <!-- Dashboard view -->
+          <div class="overlay-frame" x-show="view==='dashboard'" style="width:100%; height:100%; border:0; background:transparent; padding:0; margin:0;">
+            <div class='tableauPlaceholder' id='imdbTableauViz' style='position: relative; width:100%; height:100%'>
+              <noscript>
+                <a href='https://public.tableau.com/app/profile/jacob.krol'>
+                  <img alt='IMDb Movies Dashboard' src='https://public.tableau.com/static/images/IM/IMDbsMostPopularMoviesbyVote-weightedRatings/Dashboard1/1.png' style='border: none' />
+                </a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='IMDbsMostPopularMoviesbyVote-weightedRatings/Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/IM/IMDbsMostPopularMoviesbyVote-weightedRatings/Dashboard1/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+              </object>
+            </div>
+            <script type='text/javascript'>
+              (function initTableau(){
+                var divElement = document.getElementById('imdbTableauViz');
+                if(!divElement) return;
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                function size() {
+                  // Fill the container completely
+                  vizElement.style.width = '100%';
+                  vizElement.style.height = divElement.clientHeight + 'px';
+                  vizElement.style.minWidth = '0';
+                  vizElement.style.minHeight = '0';
+                  vizElement.style.maxWidth = '100%';
+                  vizElement.style.maxHeight = '100%';
+                }
+                size();
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                window.addEventListener('resize', size, { passive: true });
+              })();
+            </script>
+          </div>
+
+          <!-- Notebook view -->
+          <iframe x-show="view==='notebook'" class="overlay-frame" data-theme-sync="notebook" title="IMDb Notebook"
+                  src="/media/samples/imdb-movies.html" loading="lazy"
+                  style="width:100%; height:100%; border:0; background:transparent"></iframe>
+        </div>
+      </section>
+    </main>
+  </body>
+  </html>
+
+

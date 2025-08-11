@@ -1,0 +1,177 @@
+J a c o b 
+K r o l 
+
+A D D I T I O N A L  R E S O U R C E S 
+
+LinkedIn: /in/jakekrol 
+
+Github: /Jkrol6675 
+
+Livonia, MI, 48150 
+
+Phone: (586) 713-9800 
+
+Email: jacobkrol66@gmail.com 
+
+S U M M A R Y 
+
+S K I L L S  &  E X P E R T I S E 
+
+A data-driven professional with a background in data engineering, data 
+analytics, and biotechnology. I am seeking a role in data engineering  where I 
+can make a large impact through my work. I am eager to apply my analytic 
+and process optimization skillset to improve operational efﬁciency and 
+contribute to data-driven decision-making. 
+
+E X P E R I E N C E 
+
+⋅ Python 
+
+⋅ SQL 
+
+⋅ BI Tools (Power BI,  Tableau, SSRS) 
+
+⋅ Microsoft Fabric 
+
+⋅ Real-time data pipelines 
+
+⋅ Batch processing 
+
+Simpluris, Oviedo, FL (Remote)— Data Analyst I / II 
+July 2024 -  Current 
+
+●  Engineered scalable data solutions in collaboration with 
+
+⋅ AWS 
+
+ ⋅ Rust  
+
+⋅ Git 
+
+cross-functional teams to support business expansion initiatives. 
+
+⋅ Microsoft Ofﬁce 
+
+●  Evaluate various deployment strategies for on-premise large 
+
+⋅ Written and Spoken Communication 
+
+language models (LLMs) to automate high-volume production 
+
+⋅ Stakeholder Presentations 
+
+workﬂows. 
+
+●  Architected, built, and maintained data pipelines within Microsoft 
+
+Fabric to enable real-time analytics and reporting.  
+
+●  Developed production-grade SQL queries and stored procedures to 
+
+support critical business functions for a multi-terabyte relational 
+
+database. 
+
+⋅ Protein sciences 
+
+⋅ Synthetic biology 
+
+⋅ Fast and enthusiastic learner 
+
+E D U C A T I O N 
+
+●  Automated and simpliﬁed standard production processes using 
+
+Python scripts and user-friendly Jupyter Notebooks. 
+
+Bachelor of Science (B.Sc.) - Oakland 
+University, Rochester, MI 
+
+●  Designed, built, and maintained Power BI and SSRS reports to help 
+
+September 2016 - December 2019 
+
+inform key stakeholders in support of operational efﬁciency.  
+
+● 
+
+Implemented SQL-based transformations within Microsoft Fabric 
+
+pipelines to enable resilient ingestion of critical external vendor 
+
+C E R T I F I C A T E S 
+
+data. 
+
+Advanced Data Analytics Certiﬁcate  -  
+Coursera  
+
+Daicel Arbor Biosciences, Ann Arbor, MI— Research Associate/ 
+Scientist  
+
+March 2024 
+
+August 2020  -  June 2024 
+
+●  Designed and maintained ETL pipelines in order to streamline 
+
+statistical analysis and visualization of experimental data and 
+
+Certiﬁcate in Biotechnology Engineering 
+with Distinction  -  University of 
+Southern California, Los Angeles, CA 
+
+efﬁciently convey results to stakeholders. 
+
+June 2023 
+
+●  Utilized Lean Six Sigma concepts to improve data collection and 
+
+handling practices within the organization.  
+
+●  Performed and coordinated experimentation with international 
+
+teams to upscale and standardize manufacturing processes. 
+
+●  Designed, tested, documented, and implemented new production 
+
+processes. 
+
+P U B L I C A T I O N S 
+
+Krol, J. and Tawil, B. "Cell-based meat: 
+
+farming from a fermenter." Journal of 
+
+Applied Biotechnology and Bioengineering 
+
+10.1 (2023): 17-22. 
+
+https://doi.org/10.15406/jabb.2023.10.00322 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+

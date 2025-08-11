@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Walmart Sales Projections • Jake Krol</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="/js/app.js"></script>
+  </head>
+  <body x-data="portfolioApp()" x-init="init()">
+    <div class="site-bg" aria-hidden="true"></div>
+    <header class="site-header glass">
+      <div class="container header-inner">
+        <a href="/#home" class="brand">
+          <span class="brand-avatar" aria-hidden="true"><img src="/media/images/profile-small.jpg" alt="Profile" /></span>
+          <span class="brand-text">
+            <strong>Jake Krol</strong>
+            <small>Data Analyst • Data Engineer</small>
+          </span>
+        </a>
+        <nav class="main-nav">
+          <a href="/#home">Home</a>
+          <a href="/#projects">Projects</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <label class="switch" :aria-label="$store.theme?.isDark ? 'Switch to light theme' : 'Switch to dark theme'">
+            <input type="checkbox" :checked="$store.theme?.isDark" @change="$store.theme?.toggle && $store.theme.toggle()" />
+            <span class="track"><span class="knob" aria-hidden="true"></span></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="project-walmart" class="section-gap">
+        <div class="section-head">
+          <h2>Walmart Sales Projections</h2>
+          <p class="muted">Demonstrates the mindset and process of developing a simple but powerful regression model to predict sales given an existing dataset.</p>
+        </div>
+
+        <div class="glass overlay-content" style="width:100%; height:min(100vh); overflow:hidden;">
+          <div class="overlay-bar" style="border-bottom:1px solid var(--glass-stroke);">
+            <strong>Jupyter Notebook</strong>
+            <div class="overlay-actions">
+              <a class="btn ghost" href="https://github.com/Jkrol6675/walmart_sales_analysis/tree/main/walmart_sales" target="_blank" rel="noreferrer noopener">Source</a>
+            </div>
+          </div>
+          <iframe id="nbframe" class="overlay-frame" src="/media/samples/walmart-sales.html" title="Walmart Sales Notebook" loading="lazy"></iframe>
+        </div>
+      </section>
+    </main>
+    <script>
+      (function() {
+        function themeName() {
+          return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        }
+        function cssFor(theme) {
+          if (theme === 'light') {
+            return `
+              :root{color-scheme:light}
+              html,body{background:#f8f9fc!important;color:#111827!important}
+              a{color:#185cff!important}
+              pre,code{background:#eef2ff!important;color:#111827!important}
+              table, .dataframe{background:#ffffff!important;color:#111827!important;border-collapse:collapse}
+              th,td{border:1px solid #e5e7eb!important;padding:6px 8px}
+              thead th{background:#f3f4f6!important;font-weight:600}
+            `;
+          }
+          return `
+            :root{color-scheme:dark}
+            html,body{background:#0e0e12!important;color:#e6e6ee!important}
+            a{color:#9fd8ff!important}
+            pre,code{background:#16181d!important;color:#e6e6ee!important}
+            /* Tables and dataframes */
+            table, .dataframe{background:#12151a!important;color:#e6e6ee!important;border-collapse:collapse}
+            th,td{border:1px solid #2a2f3a!important;padding:6px 8px}
+            thead th{background:#1b1f28!important;font-weight:600}
+            /* Override any light zebra striping */
+            tbody tr:nth-child(odd), .dataframe tbody tr:nth-child(odd){background:#10141a!important}
+            tbody tr:nth-child(even), .dataframe tbody tr:nth-child(even){background:#161b22!important}
+            /* Common notebook containers */
+            .output, .output_html, .rendered_html, .text_cell_render, .jp-RenderedHTMLCommon{color:#e6e6ee!important}
+            /* Ensure markdown/HTML text inherits light color */
+            p, li, h1, h2, h3, h4, h5, h6, figcaption, caption{color:#e6e6ee!important}
+            /* SVG axes/labels */
+            svg text{fill:#e6e6ee!important}
+            svg .tick text{fill:#e6e6ee!important}
+            svg path, svg line{stroke:#cfd3dc!important}
+            /* Images from plots – approximate dark-mode via invert */
+            img{filter:invert(0.92) hue-rotate(180deg) saturate(0.9);}
+            /* Allow opting out by setting data-no-invert on an image */
+            img[data-no-invert]{filter:none}
+          `;
+        }
+        function applyThemeToIframe() {
+          var iframe = document.getElementById('nbframe');
+          if (!iframe || !iframe.contentDocument) return;
+          var doc = iframe.contentDocument;
+          var head = doc.head || doc.getElementsByTagName('head')[0];
+          if (!head) return;
+          var style = doc.getElementById('theme-bridge');
+          if (!style) {
+            style = doc.createElement('style');
+            style.id = 'theme-bridge';
+            head.appendChild(style);
+          }
+          style.textContent = cssFor(themeName());
+        }
+        // Apply after iframe loads
+        document.getElementById('nbframe').addEventListener('load', applyThemeToIframe);
+        // Apply on theme toggle
+        new MutationObserver(applyThemeToIframe).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+        // In case iframe is already loaded from bfcache
+        setTimeout(applyThemeToIframe, 200);
+      })();
+    </script>
+  </body>
+  </html>
+
+
