@@ -135,6 +135,11 @@ main.container { min-height: calc(100vh - var(--header-h, 100px)); position: rel
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+/* Add breathing room above the sticky header on desktop */
+@media (min-width: 1024px) {
+  .site-header { top: 5px; }
+}
 .header-inner {
   display: flex; align-items: center; gap: 16px; padding: 10px 14px;
 }
