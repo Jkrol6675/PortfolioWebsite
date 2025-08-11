@@ -490,6 +490,10 @@ section#contact .contact { margin-top: 16px; }
 section#contact .list { padding-left: 20px; }
 section#contact .list li { margin-bottom: 12px; line-height: 1.6; }
 
+/* Add breathing room under header for Projects and Contact headings */
+main.container > section[data-tab="projects"] .section-head { padding-top: 0px; }
+section#contact .section-head { padding-top: 0px; }
+
 /* About page two-column layout */
 .about-layout {
   display: grid;
