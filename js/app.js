@@ -36,6 +36,7 @@ function portfolioApp() {
   const initialTabRaw = (location.hash || '#home').replace('#','');
   return {
     currentTab: supportedTabs.has(initialTabRaw) ? initialTabRaw : 'home',
+    isMenuOpen: false,
     animState: { leaving: null, entering: null },
     init() {
       console.log('Portfolio app initialized!');
@@ -139,6 +140,14 @@ function portfolioApp() {
       };
       window.addEventListener('hashchange', onHash);
       onHash(); // Run once on init
+
+      // Close mobile menu on resize to desktop
+      const closeMenuOnWide = () => {
+        try {
+          if (window.matchMedia('(min-width: 760px)').matches) this.isMenuOpen = false;
+        } catch (_) {}
+      };
+      window.addEventListener('resize', closeMenuOnWide, { passive: true });
     }
   };
 }

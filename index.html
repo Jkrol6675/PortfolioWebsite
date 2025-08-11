@@ -20,6 +20,7 @@
             <small>Data Analyst • Data Engineer</small>
           </span>
         </a>
+        <!-- Desktop nav -->
         <nav class="main-nav">
           <a href="#home" :class="{ active: currentTab === 'home' }">Home</a>
           <a href="#projects" :class="{ active: currentTab === 'projects' }">Projects</a>
@@ -31,8 +32,21 @@
             <input type="checkbox" :checked="$store.theme.isDark" @change="$store.theme.toggle()" />
             <span class="track"><span class="knob" aria-hidden="true"></span></span>
           </label>
+          <!-- Mobile menu toggle -->
+          <button class="menu-btn" @click="isMenuOpen = !isMenuOpen" :aria-expanded="isMenuOpen.toString()" aria-controls="mobile-nav" aria-label="Open navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
         </div>
       </div>
+      <!-- Mobile nav panel -->
+      <nav id="mobile-nav" class="mobile-nav glass" x-show="isMenuOpen">
+        <a href="#home" @click="isMenuOpen=false" :class="{ active: currentTab === 'home' }">Home</a>
+        <a href="#projects" @click="isMenuOpen=false" :class="{ active: currentTab === 'projects' }">Projects</a>
+        <a href="#about" @click="isMenuOpen=false" :class="{ active: currentTab === 'about' }">About</a>
+        <a href="#contact" @click="isMenuOpen=false" :class="{ active: currentTab === 'contact' }">Contact</a>
+      </nav>
     </header>
 
     <main class="container">
