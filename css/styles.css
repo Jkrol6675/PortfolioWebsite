@@ -829,6 +829,24 @@ section#contact .list li { margin-bottom: 12px; line-height: 1.6; }
   }
 }
 
+/* Comfort-focused adjustments for narrow phones */
+@media (max-width: 640px) {
+  /* Increase side margins for a more comfortable read width */
+  .container { width: min(1120px, 88%); }
+  .site-header { width: min(1160px, 92%); }
+
+  /* Home stats → 2x2 grid */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+    margin: 16px 0;
+  }
+  .stats li { align-items: start; }
+  .stats strong { font-size: 16px; }
+  .stats span { font-size: 12px; }
+}
+
 @media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
